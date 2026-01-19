@@ -73,16 +73,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- 2. 資料庫 (Unit 37: 18個單字 - 物品與工具) ---
+# --- 2. 資料庫 (Unit 37: 18個單字 - User Fix) ---
 vocab_data = [
     {"amis": "Tosiya", "chi": "車子", "icon": "🚗", "source": "Row 999", "morph": "Noun"},
-    {"amis": "Parakat", "chi": "駕駛 / 開車", "icon": "🚦", "source": "Row 999", "morph": "Pa-Rakat"},
+    {"amis": "Miparakat", "chi": "駕駛 / 開車", "icon": "🚦", "source": "User Fix", "morph": "Mi-Pa-Rakat"}, # 修正
     {"amis": "Fakeloh", "chi": "石頭", "icon": "🪨", "source": "Row 221", "morph": "Noun"},
-    {"amis": "Alo'", "chi": "河流", "icon": "🌊", "source": "Row 1243", "morph": "Noun"},
+    {"amis": "'Alo", "chi": "河流", "icon": "🌊", "source": "User Fix", "morph": "Noun"}, # 修正
     {"amis": "Sasing", "chi": "相片", "icon": "🖼️", "source": "Row 1029", "morph": "Noun"},
     {"amis": "Misasing", "chi": "拍照", "icon": "📸", "source": "Row 1029", "morph": "Mi-Sasing"},
     {"amis": "Tikami", "chi": "信 / 信件", "icon": "✉️", "source": "Row 322", "morph": "Noun"},
-    {"amis": "Pateli", "chi": "放置", "icon": "📥", "source": "Row 999", "morph": "Pa-Teli"},
+    {"amis": "Mipateli", "chi": "放置", "icon": "📥", "source": "User Fix", "morph": "Mi-Pa-Teli"}, # 修正
     {"amis": "Teli", "chi": "放置 (詞根)", "icon": "📍", "source": "Root", "morph": "Root"},
     {"amis": "Papotal", "chi": "外面", "icon": "🌳", "source": "Row 421", "morph": "Pa-Potal"},
     {"amis": "Salidong", "chi": "雨傘 / 遮蔽具", "icon": "☂️", "source": "Row 3484", "morph": "Sa-Lidong"},
@@ -91,52 +91,52 @@ vocab_data = [
     {"amis": "Nanom", "chi": "水", "icon": "💧", "source": "Row 999", "morph": "Noun"},
     {"amis": "Lalan", "chi": "路 / 道路", "icon": "🛣️", "source": "Row 1243", "morph": "Noun"},
     {"amis": "Koko'", "chi": "雞", "icon": "🐔", "source": "Common", "morph": "Noun"},
-    {"amis": "Wacu", "chi": "狗", "icon": "🐕", "source": "Common", "morph": "Noun"},
-    {"amis": "Pusi", "chi": "貓", "icon": "🐈", "source": "Common", "morph": "Noun"},
+    {"amis": "Waco", "chi": "狗", "icon": "🐕", "source": "User Fix", "morph": "Noun"}, # 修正
+    {"amis": "Posi", "chi": "貓", "icon": "🐈", "source": "User Fix", "morph": "Noun"}, # 修正
 ]
 
 # --- 句子庫 (9句: 嚴格源自 CSV 並移除連字號) ---
 sentences = [
-    {"amis": "Telien no parakatay to tosiya ko sapafangsis a nanom i tosiya.", "chi": "香水要被司機放在車上。", "icon": "🚗", "source": "Row 999"},
+    {"amis": "Telien no miparakatay to tosiya ko sapafangsis a nanom i tosiya.", "chi": "香水要被司機放在車上。", "icon": "🚗", "source": "Row 999 (User Fix)"},
     {"amis": "Mimingay a kohecalay koni a fakeloh.", "chi": "這塊石頭又小又白。", "icon": "🪨", "source": "Row 221"},
     {"amis": "Hali'ayam ko misasingay a tamdaw.", "chi": "攝影者愛鳥。", "icon": "📸", "source": "Row 1029"},
     {"amis": "O sapilidong to 'orad ato fali.", "chi": "用來避雨和避風的(東西)。", "icon": "☂️", "source": "Row 3484"},
-    {"amis": "Mitireng ci Nakaw i papotal.", "chi": "Nakaw在外面站著。", "icon": "🌳", "source": "Row 421"},
+    {"amis": "T-om-ireng ci Nakaw i papotal.", "chi": "Nakaw在外面站著。", "icon": "🌳", "source": "Row 421 (User Fix)"},
     {"amis": "Talariyar a mifoting ci mama.", "chi": "爸爸去海邊捕魚。", "icon": "🐟", "source": "Row 223"},
-    {"amis": "Ira ko lalan a tayra i alo'.", "chi": "有路去河邊。", "icon": "🛣️", "source": "Adapted"},
-    {"amis": "Pakaen to koko' ato wacu.", "chi": "餵雞和狗。", "icon": "🐔", "source": "Standard Pattern"},
+    {"amis": "Ira ko lalan a tayra i 'alo.", "chi": "有路去河邊。", "icon": "🛣️", "source": "User Fix"},
+    {"amis": "Mipakaen to koko' ato waco.", "chi": "餵雞和狗。", "icon": "🐔", "source": "User Fix"},
     {"amis": "Micakay to tikami.", "chi": "買信(紙)。", "icon": "✉️", "source": "Adapted from Row 322"},
 ]
 
 # --- 3. 隨機題庫 (5題) ---
 raw_quiz_pool = [
     {
-        "q": "Telien no parakatay to tosiya ko...",
-        "audio": "Telien no parakatay to tosiya ko",
+        "q": "Telien no miparakatay to tosiya ko...",
+        "audio": "Telien no miparakatay to tosiya ko",
         "options": ["香水放在車上", "石頭放在車上", "雞放在車上"],
         "ans": "香水放在車上",
-        "hint": "Tosiya (車), Parakatay (司機), Nanom (水/香水) (Row 999)"
+        "hint": "Miparakatay (司機), Nanom (水/香水) (User Fix)"
     },
     {
-        "q": "Mimingay a kohecalay koni a fakeloh.",
-        "audio": "Mimingay a kohecalay koni a fakeloh",
-        "options": ["這塊石頭又小又白", "這塊石頭很大", "這塊石頭是黑的"],
-        "ans": "這塊石頭又小又白",
-        "hint": "Fakeloh (石頭) (Row 221)"
+        "q": "Ira ko lalan a tayra i...",
+        "audio": "Ira ko lalan a tayra i",
+        "options": ["'Alo (河邊)", "Tosiya (車上)", "Fakeloh (石頭)"],
+        "ans": "'Alo (河邊)",
+        "hint": "User Fix: 'Alo"
     },
     {
-        "q": "單字測驗：Misasing",
-        "audio": "Misasing",
-        "options": ["拍照", "畫畫", "寫字"],
-        "ans": "拍照",
-        "hint": "Mi- (做) + Sasing (相片)"
+        "q": "單字測驗：Miparakat",
+        "audio": "Miparakat",
+        "options": ["駕駛/開車", "走路", "跑步"],
+        "ans": "駕駛/開車",
+        "hint": "User Fix: Miparakat"
     },
     {
-        "q": "單字測驗：Salidong",
-        "audio": "Salidong",
-        "options": ["雨傘/遮蔽具", "衣服", "帽子"],
-        "ans": "雨傘/遮蔽具",
-        "hint": "Sa- (工具) + Lidong (遮蔽)"
+        "q": "單字測驗：Waco",
+        "audio": "Waco",
+        "options": ["狗", "貓", "雞"],
+        "ans": "狗",
+        "hint": "User Fix: Waco"
     },
     {
         "q": "O sapilidong to 'orad ato fali.",
@@ -167,7 +167,7 @@ if 'init' not in st.session_state:
 
 # --- 5. 主介面 ---
 st.markdown("<h1 style='text-align: center; color: #455A64;'>Unit 37: O Tu'tu'</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #666;'>物品與工具 (Objects & Tools)</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #666;'>物品與工具 (User Corrected)</p>", unsafe_allow_html=True)
 
 tab1, tab2 = st.tabs(["📚 詞彙與句型", "🎲 隨機挑戰"])
 
